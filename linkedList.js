@@ -38,14 +38,14 @@ function linkedListGenerator(){
 
   }
 
-  function get(index) {
+  function get(number) {
     var count = 0;
     var position = head;
-    while (count < index && position.next != null) {
+    while (count < number && position.next != null) {
       position = position.next;
       count++;
     }
-    if (count === index) {
+    if (count === number) {
       return position;
     } else {
       return false;
@@ -53,10 +53,33 @@ function linkedListGenerator(){
   }
 
   function remove(number) {
+    var currNode = get(number);
+    var prevNode = get(number - 1);
+
+    if (currNode === false){
+      return  false;
+    }
+
+    if (currNode.next === null){
+      tail = prevNode;
+    }
+
+    if (number === 0){
+      if (currNode.next === null){
+        head = null;
+        tail = null;
+      }else{
+      head = head.next;
+      }
+    }
+
+    prevNode.next = currNode.next;
 
   }
 
+
   function insert(value, number) {
+
 
   }
   return {
