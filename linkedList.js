@@ -45,6 +45,7 @@ function linkedListGenerator(){
       position = position.next;
       count++;
     }
+
     if (count === number) {
       return position;
     } else {
@@ -55,7 +56,7 @@ function linkedListGenerator(){
   function remove(number) {
     var currNode = get(number);
     var prevNode = get(number - 1);
-    console.log(head);
+    //console.log(head);
 
     if (currNode === false){
       return false;
@@ -86,12 +87,19 @@ function linkedListGenerator(){
     if (currNode === false) {
       return false;
     }
+
     if (number === 0) {
       head = newNode;
+      newNode.next = currNode;
     } else {
       prevNode.next = newNode;
+      newNode.next = currNode;
     }
 
+    if (currNode.next === null) {
+      tail = newNode;
+      currNode.next = newNode;
+    }
 
   }
   return {
