@@ -12,12 +12,10 @@ function linkedListGenerator(){
 
   function getHead() {
     return head;
-
   }
 
   function getTail() {
     return tail;
-
   }
 
   function add(value) {
@@ -33,9 +31,7 @@ function linkedListGenerator(){
         tail.next = newNode;
         tail = newNode;
       }
-
       return newNode;
-
   }
 
   function get(number) {
@@ -56,7 +52,7 @@ function linkedListGenerator(){
   function remove(number) {
     var currNode = get(number);
     var prevNode = get(number - 1);
-    //console.log(head);
+    //console.log("head", head);
 
     if (currNode === false){
       return false;
@@ -68,11 +64,9 @@ function linkedListGenerator(){
 
     else if (number === 0){
       head = head.next;
-
     }
 
     prevNode.next = currNode.next;
-
   }
 
 
@@ -100,7 +94,6 @@ function linkedListGenerator(){
       tail = newNode;
       currNode.next = newNode;
     }
-
   }
   return {
     getHead,
@@ -109,5 +102,5 @@ function linkedListGenerator(){
     remove,
     get,
     insert,
-  }
+  };
 }
